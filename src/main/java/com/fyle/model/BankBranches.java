@@ -14,10 +14,7 @@ public class BankBranches {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false, name = "id")
-    private Integer id;
-
-    @Column(name = "ifsc")
+    @Column(nullable = false, name = "ifsc")
     private String ifsc;
 
     @Column(name = "branch")
@@ -44,8 +41,7 @@ public class BankBranches {
 
     public BankBranches() {}
 
-    public BankBranches(String ifsc, String branch, String address, String city, String district, String state, String bankName, Bank bank) {
-        this.ifsc = ifsc;
+    public BankBranches(String branch, String address, String city, String district, String state, String bankName, Bank bank) {
         this.branch = branch;
         this.address = address;
         this.city = city;
