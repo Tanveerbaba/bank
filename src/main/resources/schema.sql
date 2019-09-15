@@ -4,8 +4,7 @@ name TEXT
 );
 
 CREATE TABLE bank_branches (
-id INT PRIMARY KEY NOT NULL,
-ifsc TEXT NOT NULL,
+ifsc TEXT PRIMARY KEY NOT NULL,
 branch TEXT,
 address TEXT,
 city TEXT,
