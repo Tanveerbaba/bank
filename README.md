@@ -37,3 +37,5 @@
 curl -v GET -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNTY5MDIzNzc5fQ.hfgqSrwOUKEWKcy9KPbu-DBHGpOhnG3KVtztaHo2fx-B0IEpb2KEhpm9A6GOTutRwXkiF8dpMxNq0ssBU17Yyg" --url "https://fyle-bank-16092019.herokuapp.com/fyle/bank/branches?bank_name=ABHYUDAYA%20COOPERATIVE%20BANK%20LIMITED&city=MUMBAI&offset=0&limit=10"
 
 curl -v GET -H "Authorization: Bearer eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJ1c2VyIiwiZXhwIjoxNTY5MDIzNzc5fQ.hfgqSrwOUKEWKcy9KPbu-DBHGpOhnG3KVtztaHo2fx-B0IEpb2KEhpm9A6GOTutRwXkiF8dpMxNq0ssBU17Yyg" --url "https://fyle-bank-16092019.herokuapp.com/fyle/bank/bankDetails?ifsc=ABHY0065001&offset=0&limit=10"
+
+# Remember these Curl commands will run on Windows and you need to use escape(\) character for "" in request body labels and values.  
