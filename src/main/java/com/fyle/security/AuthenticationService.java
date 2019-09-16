@@ -12,11 +12,10 @@ import static java.util.Collections.emptyList;
 
 public class AuthenticationService {
 
-    @Value("${jwt.secret.key}")
-    private static String secret;
+
 
     static final long EXPIRATIONTIME = 432_000_000; // 5 days
-//    static final String SECRET = secret;
+    static final String SECRET = System.getenv().get("JWT_SECRET");
     static final String TOKEN_PREFIX = "Bearer";
     static final String HEADER_STRING = "Authorization";
 
@@ -24,7 +23,7 @@ public class AuthenticationService {
         String JWT = Jwts.builder()
                 .setSubject(username)
                 .setExpiration(new Date(System.currentTimeMillis() + EXPIRATIONTIME))
-                .signWith(SignatureAlgorithm.HS512, secret)
+                .signWith(SignatureAlgorithm.HS512, SECRET)
                 .compact();
         res.addHeader(HEADER_STRING, TOKEN_PREFIX + " " + JWT);
     }
@@ -34,7 +33,7 @@ public class AuthenticationService {
         if (token != null) {
 
             String user = Jwts.parser()
-                    .setSigningKey(secret)
+                    .setSigningKey(SECRET)
                     .parseClaimsJws(token.replace(TOKEN_PREFIX, ""))
                     .getBody()
                     .getSubject();
