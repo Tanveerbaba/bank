@@ -12,7 +12,7 @@ import static java.util.Collections.emptyList;
 
 public class AuthenticationService {
 
-    @Value(value = "${jwt.secret.key}")
+    @Value("${jwt.secret.key}")
     private static String secret;
 
     static final long EXPIRATIONTIME = 432_000_000; // 5 days
